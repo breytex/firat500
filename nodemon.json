@@ -1,5 +1,5 @@
 {
-  "watch": ["server.js", "css"],
-  "exec": "node server.js",
-  "ext": "js ts"
+  "watch": ["server/index.js", "css"],
+  "exec": "node --experimental-modules server/index.js",
+  "ext": "js tsx"
 }
