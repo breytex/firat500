@@ -2,7 +2,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
-export default function Home() {
+
+export default function Page() {
   return (
     <div className={styles.container}>
       <Head>
@@ -11,8 +12,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      Index
-      <Link href="/page"><a style={{textDecoration:"underline"}}>to page</a></Link>
+      Page
+      <Link href="/"><a style={{textDecoration:"underline"}}>to index</a></Link>
     </div>
   )
 }

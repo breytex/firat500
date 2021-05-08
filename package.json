@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "next": "10.2.0",
+    "nodemon": "^2.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   }
