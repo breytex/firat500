@@ -12,31 +12,15 @@ interface Props {
   items?: NavigationItem[]
 }
 
-type SSRComponent = React.FC<Props> & {getSsrData: (e:string)=>Promise<any>}
 
-const fetchNavigationData = ()=> myFetch("http://localhost:3000/api/navigation")
-
-export const Navigation: SSRComponent = ()=>{
-  const [navigationProps, setNavigationProps] = useState([])
-
-  useEffect(
-    ()=>{
-      fetchNavigationData().then(data =>{
-        setNavigationProps(data)
-      })
-    },
-    []
-  )
-
+export const Navigation: React.FC<Props> = ({items})=>{
+  
   return (
     <div style={{display:"flex", maxWidth: "500px", justifyContent: "space-between", marginTop: "100px"}}>
-      {navigationProps.map(item => <NavigationItem {...item}/>)}
+      {items && items.map(item => <NavigationItem key={item.href} {...item}/>)}
     </div>
   )
 }
-
-// Adding datafetch function to be visited on server side prepass
-Navigation.getSsrData = fetchNavigationData
 
 const NavigationItem = (props) =>(
   <Link href={props.href}>
